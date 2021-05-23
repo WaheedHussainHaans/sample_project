@@ -32,8 +32,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Icon(Icons.clear),
+                        ],
+                      ),
                       SizedBox(
-                        height: Get.height * 0.06,
+                        height: Get.height * 0.1,
                       ),
                       Text(
                         'Login with email',
@@ -59,7 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         obscure: true,
                       ),
                       SizedBox(
-                        height: Get.height * 0.02,
+                        height: 20,
                       ),
                       Text(
                         'Forgot Password ?',
@@ -70,11 +76,14 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       SizedBox(
-                        height: Get.height * 0.02,
+                        height: 30,
                       ),
                       CommonElevatedButton(
                         buttonText: 'Login',
                         onTapped: onLoginPressed,
+                      ),
+                      SizedBox(
+                        height: 40,
                       ),
                       Text(
                         'Don\'t have a account?',
@@ -82,6 +91,9 @@ class _LoginScreenState extends State<LoginScreen> {
                           color: Colors.blue[900],
                           fontSize: 18,
                         ),
+                      ),
+                      SizedBox(
+                        height: 20,
                       ),
                       InkWell(
                         onTap: () => Get.to(SignUpScreen()),

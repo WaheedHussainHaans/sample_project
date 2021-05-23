@@ -43,7 +43,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     return Obx(
       () => Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.grey[300],
         body: ModalProgressHUD(
           inAsyncCall: authController.isLoading.value,
           child: SafeArea(
@@ -69,8 +69,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     InkWell(
                       onTap: updateProfileImage,
                       child: Container(
-                        width: Get.width * 0.4,
-                        height: Get.width * 0.4,
+                        width: Get.width * 0.3,
+                        height: Get.width * 0.3,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           image: DecorationImage(
@@ -113,10 +113,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       controller: passwordCon,
                       obscure: true,
                     ),
-                    SizedBox(height: Get.height * 0.06),
+                    SizedBox(
+                      height: 30,
+                    ),
                     CommonElevatedButton(
                       buttonText: 'Sign Up',
                       onTapped: onSignupPressed,
+                    ),
+                    SizedBox(
+                      height: 40,
                     ),
                     Text(
                       'Already have an account?',
@@ -124,6 +129,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         color: Colors.blue[900],
                         fontSize: 18,
                       ),
+                    ),
+                    SizedBox(
+                      height: 20,
                     ),
                     InkWell(
                       onTap: () => Get.back(),
